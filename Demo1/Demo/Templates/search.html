@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel = "stylesheet" type ="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Blog</title>
+</head>
+<style>
+    table,
+    th,
+    td 
+    {
+        border: 2px solid;
+    }
+</style>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <h2 style="text-align:center"> Demo </h2>
+    <h2><a href="/add/">Add member</a></h2>
+    <table align="center" style="margin: 0px auto;">
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Ten cot</th>
+                <th>Kieu du lieu</th>
+                <th>Chu thich</th>
+                <th>Edit Blog</th>
+                <th>Remove Blog</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for blog in blogs %}
+            <tr>
+                <td>{{blog.STT}}</td>
+                <td>{{blog.Ten_cot}}</td>
+                <td>{{blog.Kieu_du_lieu}}</td>
+                <td>{{blog.Chu_thich}}</td>
+                <td>
+                    <a href="/update/{{blog.pk}}">Update</a>    
+                </td>
+                <td>
+                    <a href="/delete/{{blog.pk}}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+
+</html>
